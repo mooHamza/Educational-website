@@ -1,0 +1,778 @@
+[
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "CreateCourse",
+    "RelativePath": "api/Courses",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Course",
+        "Type": "Educational.DTO_Models.CourseDto.CourseCreate_Dto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "GetCourse",
+    "RelativePath": "api/Courses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Educational.DTO_Models.CourseDto.CourseGetDto, Educational, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "AddWeek",
+    "RelativePath": "api/Courses/{CourseId}/weeks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "week",
+        "Type": "Educational.DTO_Models.Week_CreateDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "CourseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "UpdateWeek",
+    "RelativePath": "api/Courses/{CourseId}/weeks/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Week",
+        "Type": "Educational.DTO_Models.Week_Update_Dto",
+        "IsRequired": true
+      },
+      {
+        "Name": "CourseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "DeleteWeek",
+    "RelativePath": "api/Courses/{CourseId}/weeks/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CourseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "AddLecture",
+    "RelativePath": "api/Courses/{CourseId}/weeks/{WeekId}/lectures",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Homeworks",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Educational.Entities.Hw_Create_Dto, Educational, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CourseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "WeekId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "UpdateLecture",
+    "RelativePath": "api/Courses/{CourseId}/weeks/{WeekId}/lectures/{LectureId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Homeworks",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Educational.Entities.Hw_Create_Dto, Educational, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CourseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "WeekId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "LectureId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "DeleteLecture",
+    "RelativePath": "api/Courses/{CourseId}/weeks/{WeekId}/lectures/{LectureId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CourseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "WeekId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "LectureId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "AddHomework",
+    "RelativePath": "api/Courses/{CourseId}/weeks/{WeekId}/lectures/{LectureId}/homeworks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "homework",
+        "Type": "Educational.Entities.Hw_Create_Dto",
+        "IsRequired": true
+      },
+      {
+        "Name": "LectureId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "CourseId",
+        "Type": "",
+        "IsRequired": true
+      },
+      {
+        "Name": "WeekId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "RemoveHomework",
+    "RelativePath": "api/Courses/{CourseId}/weeks/{WeekId}/lectures/{LectureId}/homeworks/{homewokId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "homewokId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "CourseId",
+        "Type": "",
+        "IsRequired": true
+      },
+      {
+        "Name": "WeekId",
+        "Type": "",
+        "IsRequired": true
+      },
+      {
+        "Name": "LectureId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "UpdateHomework",
+    "RelativePath": "api/Courses/{CourseId}/weeks/{WeekId}/lectures/{LectureId}/homeworks/{HomeworkId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "homework",
+        "Type": "Educational.Entities.Hw_Create_Dto",
+        "IsRequired": true
+      },
+      {
+        "Name": "HomeworkId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "CourseId",
+        "Type": "",
+        "IsRequired": true
+      },
+      {
+        "Name": "WeekId",
+        "Type": "",
+        "IsRequired": true
+      },
+      {
+        "Name": "LectureId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "GetCoursee",
+    "RelativePath": "api/Courses/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "UpdateCourse",
+    "RelativePath": "api/Courses/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UpdatedCourse",
+        "Type": "Educational.DTO_Models.CourseDto.Course_Update_Dto",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "DeleteCourse",
+    "RelativePath": "api/Courses/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.CoursesController",
+    "Method": "CreateFullCourse",
+    "RelativePath": "api/Courses/full",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "GradeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Weeks",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Educational.DTO_Models.Week_CreateDto, Educational, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.GradesController",
+    "Method": "CreateGrade",
+    "RelativePath": "api/Grades",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Grade_Create_Dto",
+        "Type": "Grade_Create_Dto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.GradesController",
+    "Method": "GetGrades",
+    "RelativePath": "api/Grades",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Grade_Get_Dto, Educational, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Educational.Controllers.GradesController",
+    "Method": "GetGrade",
+    "RelativePath": "api/Grades/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Grade_Get_Dto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Educational.Controllers.GradesController",
+    "Method": "DeleteGrade",
+    "RelativePath": "api/Grades/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.GradesController",
+    "Method": "EditGrade",
+    "RelativePath": "api/Grades/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Grade_Update_Dto",
+        "Type": "Grade_Update_Dto",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.RoleController",
+    "Method": "createRole",
+    "RelativePath": "api/Role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Role_Create_Dto",
+        "Type": "Educational.DTO_Models.RoleDto.Role_Create_Update_Dto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.RoleController",
+    "Method": "GetRoles",
+    "RelativePath": "api/Role",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Educational.DTO_Models.RoleDto.Role_Get_Dto, Educational, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Educational.Controllers.RoleController",
+    "Method": "EditRole",
+    "RelativePath": "api/Role/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Role_Create_Update_Dto",
+        "Type": "Educational.DTO_Models.RoleDto.Role_Create_Update_Dto",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.RoleController",
+    "Method": "DeleteRole",
+    "RelativePath": "api/Role/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.UsersController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/Users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.UsersController",
+    "Method": "GetUser",
+    "RelativePath": "api/Users/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Educational.DTO_Models.Get_User_Dto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Educational.Controllers.UsersController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/Users/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.UsersController",
+    "Method": "EditUser",
+    "RelativePath": "api/Users/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "user",
+        "Type": "Educational.DTO_Models.UserDto.Update_User_Dto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.UsersController",
+    "Method": "GetUserCourses",
+    "RelativePath": "api/Users/{Id}/courses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.UsersController",
+    "Method": "BookCourse",
+    "RelativePath": "api/Users/{Id}/courses/{CourseId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "CourseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.UsersController",
+    "Method": "GetEvaluaions",
+    "RelativePath": "api/Users/{Id}/homeworks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.UsersController",
+    "Method": "GetEvaluaion",
+    "RelativePath": "api/Users/{Id}/homeworks/{HomeworkId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "HomeworkId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.UsersController",
+    "Method": "HomeworkScore",
+    "RelativePath": "api/Users/{Id}/homeworks/{HomeworkId}/score/{Score}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "HomeworkId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Score",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "user_Answers",
+        "Type": "System.Collections.Generic.List\u00601[[Educational.DTO_Models.User_Answers.User_AnswersDto, Educational, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.UsersController",
+    "Method": "login",
+    "RelativePath": "api/Users/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginUser",
+        "Type": "Educational.DTO_Models.Logindto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Educational.Controllers.UsersController",
+    "Method": "Register",
+    "RelativePath": "api/Users/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Educational.DTO_Models.Userdto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
