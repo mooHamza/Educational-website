@@ -26,7 +26,10 @@ const BookCourse = () => {
         `http://localhost:5020/api/Users/${selectedUserId}/courses/${selectedCourseId}`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
       );
 
