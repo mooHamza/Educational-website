@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "Course",
-        "Type": "Educational.DTO_Models.CourseDto.CourseCreate_Dto",
+        "Type": "Educational.DTO_Models.CourseDto.Course_Create_Update_Dto",
         "IsRequired": true
       }
     ],
@@ -45,7 +45,7 @@
     "Parameters": [
       {
         "Name": "week",
-        "Type": "Educational.DTO_Models.Week_CreateDto",
+        "Type": "Educational.DTO_Models.Week_Create_Update_Dto",
         "IsRequired": true
       },
       {
@@ -66,7 +66,7 @@
     "Parameters": [
       {
         "Name": "Week",
-        "Type": "Educational.DTO_Models.Week_Update_Dto",
+        "Type": "Educational.DTO_Models.Week_Create_Update_Dto",
         "IsRequired": true
       },
       {
@@ -123,7 +123,7 @@
       },
       {
         "Name": "Homeworks",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Educational.Entities.Hw_Create_Dto, Educational, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Educational.Entities.Homework_Create_Update_Dto, Educational, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -159,7 +159,7 @@
       },
       {
         "Name": "Homeworks",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Educational.Entities.Hw_Create_Dto, Educational, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Educational.Entities.Homework_Create_Update_Dto, Educational, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -216,7 +216,7 @@
     "Parameters": [
       {
         "Name": "homework",
-        "Type": "Educational.Entities.Hw_Create_Dto",
+        "Type": "Educational.Entities.Homework_Create_Update_Dto",
         "IsRequired": true
       },
       {
@@ -278,7 +278,7 @@
     "Parameters": [
       {
         "Name": "homework",
-        "Type": "Educational.Entities.Hw_Create_Dto",
+        "Type": "Educational.Entities.Homework_Create_Update_Dto",
         "IsRequired": true
       },
       {
@@ -306,7 +306,7 @@
   },
   {
     "ContainingType": "Educational.Controllers.CoursesController",
-    "Method": "GetCoursee",
+    "Method": "GetCourse",
     "RelativePath": "api/Courses/{Id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -330,7 +330,7 @@
     "Parameters": [
       {
         "Name": "UpdatedCourse",
-        "Type": "Educational.DTO_Models.CourseDto.Course_Update_Dto",
+        "Type": "Educational.DTO_Models.CourseDto.Course_Create_Update_Dto",
         "IsRequired": true
       },
       {
@@ -343,7 +343,7 @@
   },
   {
     "ContainingType": "Educational.Controllers.CoursesController",
-    "Method": "DeleteCourse",
+    "Method": "DeleteCourseAsync",
     "RelativePath": "api/Courses/{Id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -358,42 +358,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Educational.Controllers.CoursesController",
-    "Method": "CreateFullCourse",
-    "RelativePath": "api/Courses/full",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Description",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Price",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "GradeId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Weeks",
-        "Type": "System.Collections.Generic.ICollection\u00601[[Educational.DTO_Models.Week_CreateDto, Educational, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Educational.Controllers.GradesController",
     "Method": "CreateGrade",
     "RelativePath": "api/Grades",
@@ -403,7 +367,7 @@
     "Parameters": [
       {
         "Name": "Grade_Create_Dto",
-        "Type": "Grade_Create_Dto",
+        "Type": "Grade_Create_Update_Dto",
         "IsRequired": true
       }
     ],
@@ -481,28 +445,12 @@
     "Parameters": [
       {
         "Name": "Grade_Update_Dto",
-        "Type": "Grade_Update_Dto",
+        "Type": "Grade_Create_Update_Dto",
         "IsRequired": true
       },
       {
         "Name": "Id",
         "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Educational.Controllers.RoleController",
-    "Method": "createRole",
-    "RelativePath": "api/Role",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Role_Create_Dto",
-        "Type": "Educational.DTO_Models.RoleDto.Role_Create_Update_Dto",
         "IsRequired": true
       }
     ],
@@ -529,43 +477,6 @@
     ]
   },
   {
-    "ContainingType": "Educational.Controllers.RoleController",
-    "Method": "EditRole",
-    "RelativePath": "api/Role/{Id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Role_Create_Update_Dto",
-        "Type": "Educational.DTO_Models.RoleDto.Role_Create_Update_Dto",
-        "IsRequired": true
-      },
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Educational.Controllers.RoleController",
-    "Method": "DeleteRole",
-    "RelativePath": "api/Role/{Id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Educational.Controllers.UsersController",
     "Method": "GetAllUsers",
     "RelativePath": "api/Users",
@@ -585,13 +496,13 @@
     "Parameters": [
       {
         "Name": "Id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Educational.DTO_Models.Get_User_Dto",
+        "Type": "Educational.DTO_Models.User_Get_Dto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -611,7 +522,7 @@
     "Parameters": [
       {
         "Name": "Id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -619,7 +530,7 @@
   },
   {
     "ContainingType": "Educational.Controllers.UsersController",
-    "Method": "EditUser",
+    "Method": "UpdateUser",
     "RelativePath": "api/Users/{Id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -627,7 +538,7 @@
     "Parameters": [
       {
         "Name": "Id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -648,7 +559,7 @@
     "Parameters": [
       {
         "Name": "Id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -664,7 +575,7 @@
     "Parameters": [
       {
         "Name": "Id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -677,7 +588,7 @@
   },
   {
     "ContainingType": "Educational.Controllers.UsersController",
-    "Method": "GetEvaluaions",
+    "Method": "GetUserEvaluaions",
     "RelativePath": "api/Users/{Id}/homeworks",
     "HttpMethod": "GET",
     "IsController": true,
@@ -685,7 +596,7 @@
     "Parameters": [
       {
         "Name": "Id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -701,7 +612,7 @@
     "Parameters": [
       {
         "Name": "Id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -722,7 +633,7 @@
     "Parameters": [
       {
         "Name": "Id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -769,7 +680,7 @@
     "Parameters": [
       {
         "Name": "user",
-        "Type": "Educational.DTO_Models.Userdto",
+        "Type": "Educational.DTO_Models.Registerdto",
         "IsRequired": true
       }
     ],

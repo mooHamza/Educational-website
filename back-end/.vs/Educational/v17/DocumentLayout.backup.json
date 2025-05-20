@@ -1,18 +1,98 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\El-walid\\source\\Desktop\\learn\\Educational\\Educational\\",
+  "WorkspaceRootPath": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\El-walid\\source\\Desktop\\learn\\Educational\\Educational\\Controllers\\CoursesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\CoursesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\dto_models\\userdto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:dto_models\\userdto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\El-walid\\source\\Desktop\\learn\\Educational\\Educational\\Controllers\\UsersController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\UsersController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\services\\gradeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:services\\gradeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\El-walid\\source\\Desktop\\learn\\Educational\\Educational\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\services\\courseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:services\\courseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\exceptions\\entitynotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:exceptions\\entitynotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\exceptions\\conflictexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:exceptions\\conflictexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\controllers\\rolecontrollercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:controllers\\rolecontrollercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\mapper\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:mapper\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\services\\interfaces\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:services\\interfaces\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\entities\\user_answer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:entities\\user_answer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\dto_models\\userdto\\update_user_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:dto_models\\userdto\\update_user_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\dto_models\\roledto\\role_get_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:dto_models\\roledto\\role_get_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\entities\\grade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:entities\\grade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\repositories\\graderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:repositories\\graderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\dto_models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:dto_models\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\exceptions\\registrationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:exceptions\\registrationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|c:\\users\\el-walid\\desktop\\educational-website\\back-end\\appdbcontextfactory .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7A09F44-B754-46BB-A2C4-737CEE637B05}|Educational.csproj|solutionrelative:appdbcontextfactory .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +102,306 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CoursesController.cs",
-              "DocumentMoniker": "C:\\Users\\El-walid\\source\\Desktop\\learn\\Educational\\Educational\\Controllers\\CoursesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CoursesController.cs",
-              "ToolTip": "C:\\Users\\El-walid\\source\\Desktop\\learn\\Educational\\Educational\\Controllers\\CoursesController.cs",
-              "RelativeToolTip": "Controllers\\CoursesController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "UserMapper.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Mapper\\UserMapper.cs",
+              "RelativeDocumentMoniker": "Mapper\\UserMapper.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Mapper\\UserMapper.cs",
+              "RelativeToolTip": "Mapper\\UserMapper.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAwCYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T21:02:05.594Z",
+              "WhenOpened": "2025-05-17T13:18:22.163Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\El-walid\\source\\Desktop\\learn\\Educational\\Educational\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\El-walid\\source\\Desktop\\learn\\Educational\\Educational\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAEwPwAAAAZAAAAAAAAAA==",
+              "Title": "GradeServices.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\services\\GradeServices.cs",
+              "RelativeDocumentMoniker": "services\\GradeServices.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\services\\GradeServices.cs",
+              "RelativeToolTip": "services\\GradeServices.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAiwDYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T20:54:06.107Z",
+              "WhenOpened": "2025-05-20T12:58:14.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ConflictException.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Exceptions\\ConflictException.cs",
+              "RelativeDocumentMoniker": "Exceptions\\ConflictException.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Exceptions\\ConflictException.cs",
+              "RelativeToolTip": "Exceptions\\ConflictException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T08:31:50.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\middlewares\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "middlewares\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\middlewares\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "middlewares\\ExceptionMiddleware.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAiwB0AAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T08:21:10.385Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\El-walid\\source\\Desktop\\learn\\Educational\\Educational\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\El-walid\\source\\Desktop\\learn\\Educational\\Educational\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "UserServices.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\services\\UserServices.cs",
+              "RelativeDocumentMoniker": "services\\UserServices.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\services\\UserServices.cs",
+              "RelativeToolTip": "services\\UserServices.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAiwCwAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T20:53:56.435Z",
+              "WhenOpened": "2025-05-19T12:47:50.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Registerdto.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\DTO_Models\\UserDto\\Registerdto.cs",
+              "RelativeDocumentMoniker": "DTO_Models\\UserDto\\Registerdto.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\DTO_Models\\UserDto\\Registerdto.cs*",
+              "RelativeToolTip": "DTO_Models\\UserDto\\Registerdto.cs*",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwBMAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T19:58:55.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EntityNotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Exceptions\\EntityNotFoundException.cs",
+              "RelativeDocumentMoniker": "Exceptions\\EntityNotFoundException.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Exceptions\\EntityNotFoundException.cs",
+              "RelativeToolTip": "Exceptions\\EntityNotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T12:50:52.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CourseServices.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\services\\CourseServices.cs",
+              "RelativeDocumentMoniker": "services\\CourseServices.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\services\\CourseServices.cs",
+              "RelativeToolTip": "services\\CourseServices.cs",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAcwKUAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T12:23:41.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CoursesController.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "Controllers\\CoursesController.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAADgv3IAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T12:31:17.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Entities\\User.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Entities\\User.cs",
+              "RelativeToolTip": "Entities\\User.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowBMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T06:11:16.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RoleControllercs.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Controllers\\RoleControllercs.cs",
+              "RelativeDocumentMoniker": "Controllers\\RoleControllercs.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Controllers\\RoleControllercs.cs",
+              "RelativeToolTip": "Controllers\\RoleControllercs.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAiwDgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:49:03.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwDEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T12:47:14.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ICourseService.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\services\\Interfaces\\ICourseService.cs",
+              "RelativeDocumentMoniker": "services\\Interfaces\\ICourseService.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\services\\Interfaces\\ICourseService.cs",
+              "RelativeToolTip": "services\\Interfaces\\ICourseService.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAwCkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T12:33:22.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "User_Answer.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Entities\\User_Answer.cs",
+              "RelativeDocumentMoniker": "Entities\\User_Answer.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Entities\\User_Answer.cs",
+              "RelativeToolTip": "Entities\\User_Answer.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T03:44:43.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T05:41:50.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Update_User_Dto.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\DTO_Models\\UserDto\\Update_User_Dto.cs",
+              "RelativeDocumentMoniker": "DTO_Models\\UserDto\\Update_User_Dto.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\DTO_Models\\UserDto\\Update_User_Dto.cs",
+              "RelativeToolTip": "DTO_Models\\UserDto\\Update_User_Dto.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T05:47:02.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Role_Get_Dto.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\DTO_Models\\RoleDto\\Role_Get_Dto.cs",
+              "RelativeDocumentMoniker": "DTO_Models\\RoleDto\\Role_Get_Dto.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\DTO_Models\\RoleDto\\Role_Get_Dto.cs",
+              "RelativeToolTip": "DTO_Models\\RoleDto\\Role_Get_Dto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:52:55.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAASwFEAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T15:04:18.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Grade.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Entities\\Grade.cs",
+              "RelativeDocumentMoniker": "Entities\\Grade.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Entities\\Grade.cs",
+              "RelativeToolTip": "Entities\\Grade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T19:52:23.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AppDbContextFactory .cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\AppDbContextFactory .cs",
+              "RelativeDocumentMoniker": "AppDbContextFactory .cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\AppDbContextFactory .cs",
+              "RelativeToolTip": "AppDbContextFactory .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:34:35.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "logindto.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\DTO_Models\\logindto.cs",
+              "RelativeDocumentMoniker": "DTO_Models\\logindto.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\DTO_Models\\logindto.cs",
+              "RelativeToolTip": "DTO_Models\\logindto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T14:09:22.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GradeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Repositories\\GradeRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\GradeRepository.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Repositories\\GradeRepository.cs",
+              "RelativeToolTip": "Repositories\\GradeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T14:15:27.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RegistrationException.cs",
+              "DocumentMoniker": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Exceptions\\RegistrationException.cs",
+              "RelativeDocumentMoniker": "Exceptions\\RegistrationException.cs",
+              "ToolTip": "C:\\Users\\El-walid\\Desktop\\Educational-website\\back-end\\Exceptions\\RegistrationException.cs",
+              "RelativeToolTip": "Exceptions\\RegistrationException.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T14:48:03.529Z",
               "EditorCaption": ""
             }
           ]

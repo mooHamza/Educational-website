@@ -5,19 +5,18 @@ namespace Educational.DTO_Models.UserDto
 {
     public class Update_User_Dto
     {
-        public string Email { get; set; } = null!;
+        public string? Email { get; set; }
 
-        public string? Password { get; set; } = null!;
+        public string? FirstName { get; set; } 
 
-        public string FirstName { get; set; } = null!;
+        public string? SecondName { get; set; } 
 
-        public string SecondName { get; set; } = null!;
+        public string? City { get; set; }
 
-        public string City { get; set; } = null!;
+        public string? Phone { get; set; }
+        public int? GradeId { get; set; }
 
-        public string Phone { get; set; } = null!;
-
-        public  ICollection<Role_Create_Update_Dto> Roles { get; set; } = new List<Role_Create_Update_Dto>();
+        public IList<string>? Roles { get; set; } 
 
     }
 }

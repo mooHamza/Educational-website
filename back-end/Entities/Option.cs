@@ -9,6 +9,6 @@
         public int QuestionId { get; set; }
        public Question? Question { get; set; }
 
-        public ICollection<User_Answer> Users_Answers { get; set; }
+        public ICollection<User_Answer> Users_Answers { get; set; } = [];
     }
 }

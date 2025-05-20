@@ -8,8 +8,8 @@
         public int HomeworkId { get; set; }
         public Homework? Homework { get; set; }
 
-        public required List<Option> Options { get; set; } = new List<Option>();
+        public required List<Option> Options { get; set; } = [];
 
-        public ICollection<User_Answer> Users_Answers { get; set; }
+        public ICollection<User_Answer> Users_Answers { get; set; } = [];
     }
 }

@@ -13,6 +13,10 @@ using Educational.Repositories;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Http.Features;
 using System.Security.Claims;
+using Educational.services.Interfaces;
+using Educational.Mapper;
+using Microsoft.AspNetCore.Identity;
+using Educational.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,21 +50,37 @@ builder.Services.AddAuthentication()
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
-            ValidIssuer = jwtOptions.Issuer,
+            ValidIssuer = jwtOptions.Issuer!,
             ValidateAudience = true,
             ValidAudience = jwtOptions.Audience,
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.SigningKey))
         };
     });
+builder.Services.AddIdentity<User,IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
+
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("jwt"));
-builder.Services.AddScoped<CourseServices>();
-builder.Services.AddScoped<GradeServices>();
+builder.Services.AddScoped<UserServices>();
+builder.Services.AddScoped<CourseMapper>();
+builder.Services.AddScoped<UserMapper>();
+builder.Services.AddScoped<LectureMapper>();
+builder.Services.AddScoped<HomeworkMapper>();
 
 
+
+builder.Services.AddScoped<ICourseService,CourseServices>();
+builder.Services.AddScoped<IGradeServices, GradeServices>();
+
+
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<IGradeRepository, GradeRepository>();
+builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
-builder.Services.AddScoped<IcourseRepository,CourseRepository>();
+
+//builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();

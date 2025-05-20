@@ -8,9 +8,9 @@ public partial class Grade
 {
     public int Id { get; set; }
 
-    public string GradeName { get; set; } = null!;
+    public required string GradeName { get; set; } 
 
-    public virtual ICollection<User> Users { get; set; } = new List<User>();
-    public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
+    public virtual ICollection<User> Users { get; set; } = [];
+    public virtual ICollection<Course> Courses { get; set; } = [];
 
 }

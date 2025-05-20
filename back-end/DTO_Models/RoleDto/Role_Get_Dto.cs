@@ -2,8 +2,8 @@
 {
     public class Role_Get_Dto
     {
-        public int Id { get; set; }
-        public string RoleName { get; set; } = null!;
+        public required string Id { get; set; }
+        public required string RoleName { get; set; }
 
     }
 }

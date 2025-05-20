@@ -8,14 +8,13 @@ const CreateUser = () => {
   const [userData, setuserData] = useState({
     firstName: "",
     secondName: "",
-    phone: "",
-    grade: "الثالث الثانوى",
+    phoneNumber: "",
+    gradeId: "1",
     city: "السويس",
     email: "",
-    userPassword: "",
+    password: "",
+    confirmedPassword: "",
   });
-
-  console.log(grades);
 
   const handleChange = (e) => {
     setuserData({
@@ -26,20 +25,104 @@ const CreateUser = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors({});
+
+    // Frontend validation for confirm password
+    if (userData.password !== userData.confirmedPassword) {
+      setErrors({ confirmedPassword: "كلمة السر غير متطابقة" });
+      return;
+    }
 
     try {
+      const submitData = {
+        ...userData,
+        ConfirmedPassword: userData.confirmedPassword,
+      };
+
       const response = await axios.post(
         "http://localhost:5020/api/Users/register",
-        userData
+        submitData
       );
+      if (response.status === 200) {
+        setuserData({
+          firstName: "",
+          secondName: "",
+          phoneNumber: "",
+          gradeId: "1",
+          city: "السويس",
+          email: "",
+          password: "",
+          confirmedPassword: "",
+        });
+      }
     } catch (error) {
       console.log(error);
       if (error.response && error.response.data) {
-        setErrors(error.response.data);
+        const backendError = error.response.data;
+
+        // Handle different error formats
+        if (backendError.errors) {
+          const formattedErrors = {};
+
+          // Handle object-style errors (like PhoneNumber validation)
+          if (
+            typeof backendError.errors === "object" &&
+            !Array.isArray(backendError.errors)
+          ) {
+            Object.keys(backendError.errors).forEach((key) => {
+              const camelCaseKey = key.charAt(0).toLowerCase() + key.slice(1);
+              // Join multiple error messages for the same field
+              formattedErrors[camelCaseKey] =
+                backendError.errors[key].join(" ");
+
+              // Special handling for phone number errors
+              if (key === "PhoneNumber") {
+                formattedErrors.phoneNumber =
+                  "رقم الهاتف غير صحيح. يرجى إدخال رقم صحيح.";
+              }
+            });
+          }
+          // Handle array-style errors (like password requirements)
+          else if (Array.isArray(backendError.errors)) {
+            const passwordErrors = backendError.errors.filter((err) =>
+              err.includes("Passwords must")
+            );
+
+            if (passwordErrors.length > 0) {
+              formattedErrors.password = passwordErrors
+                .map((err) => {
+                  if (err.includes("non alphanumeric"))
+                    return "يجب أن تحتوي كلمة السر على حرف خاص واحد على الأقل (!@#$%^&*)";
+                  if (err.includes("lowercase"))
+                    return "يجب أن تحتوي كلمة السر على حرف صغير واحد على الأقل (a-z)";
+                  if (err.includes("uppercase"))
+                    return "يجب أن تحتوي كلمة السر على حرف كبير واحد على الأقل (A-Z)";
+                  if (err.includes("digit"))
+                    return "يجب أن تحتوي كلمة السر على رقم واحد على الأقل (0-9)";
+                  if (err.includes("least 6 characters"))
+                    return "يجب أن تحتوي كلمة السر على 6 أحرف على الأقل";
+                  return err;
+                })
+                .join("\n");
+            }
+          }
+
+          setErrors(formattedErrors);
+        } else if (backendError.message === "Username is already taken.") {
+          setErrors({
+            email:
+              "البريد الإلكتروني مستخدم بالفعل. يرجى استخدام بريد إلكتروني آخر.",
+          });
+        }
+        // Handle simple message
+        else if (backendError.message) {
+          setErrors({ general: backendError.message });
+        } else {
+          setErrors({ general: "حدث خطأ غير متوقع" });
+        }
       }
     }
   };
-
   const cities = [
     "السويس",
     "القاهرة",
@@ -118,10 +201,10 @@ const CreateUser = () => {
           {/* Phone */}
           <div className="relative my-6">
             <input
-              type="phone"
-              id="phone"
-              name="phone"
-              value={userData.phone}
+              type="phoneNumber"
+              id="phoneNumber"
+              name="phoneNumber"
+              value={userData.phoneNumber}
               className="peer w-full focus:outline-none focus:border-b-4 border-blue-400 bg-gray-900 text-gray-200 border-b p-2 mx-2"
               onChange={handleChange}
               required
@@ -129,13 +212,13 @@ const CreateUser = () => {
             <label
               className={`absolute right-2 top-2 transition-all duration-300
             peer-focus:text-sm peer-focus:-top-4 peer-focus:text-blue-400
-            ${userData.phone ? "-top-4 text-sm text-blue-400" : ""}`}
-              htmlFor="phone"
+            ${userData.phoneNumber ? "-top-4 text-sm text-blue-400" : ""}`}
+              htmlFor="phoneNumber"
             >
               رقم الهاتف
             </label>
-            {errors.phone && (
-              <p className="text-red-500">{`*${errors.phone}`}</p>
+            {errors.phoneNumber && (
+              <p className="text-red-500">{`*${errors.phoneNumber}`}</p>
             )}
           </div>
 
@@ -201,18 +284,15 @@ const CreateUser = () => {
             {errors.email && (
               <p className="text-red-500">{`*${errors.email}`}</p>
             )}
-            {errors.existEmail && (
-              <p className="text-red-500">{`*${errors.existEmail}`}</p>
-            )}
           </div>
 
           {/* userPassword */}
           <div className="relative my-6">
             <input
-              type="userPassword"
-              id="userPassword"
-              name="userPassword"
-              value={userData.userPassword}
+              type="password"
+              id="password"
+              name="password"
+              value={userData.password}
               onChange={handleChange}
               className="peer w-full focus:outline-none focus:border-b-4 border-blue-400 bg-gray-900 text-gray-200 border-b p-2 mx-2"
               required
@@ -220,16 +300,45 @@ const CreateUser = () => {
             <label
               className={`absolute right-2 top-2 transition-all duration-300
                 peer-focus:text-sm peer-focus:-top-4 peer-focus:text-blue-400
-                ${userData.userPassword ? "-top-4 text-sm text-blue-400" : ""}`}
-              htmlFor="userPassword"
+                ${userData.password ? "-top-4 text-sm text-blue-400" : ""}`}
+              htmlFor="password"
             >
               كلمة السر
             </label>
             {errors.password && (
-              <p className="text-red-500">{`*${errors.password}`}</p>
+              <div className="text-red-500 whitespace-pre-line mt-2">
+                {errors.password.split("\n").map((line, i) => (
+                  <p key={i}>* {line}</p>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="relative my-6 col-span-2">
+            <input
+              type="password"
+              id="confirmedPassword"
+              name="confirmedPassword"
+              value={userData.confirmedPassword}
+              onChange={handleChange}
+              className="peer w-full focus:outline-none focus:border-b-4 border-blue-400 bg-gray-900 text-gray-200 border-b p-2 mx-2"
+              required
+            />
+            <label
+              className={`absolute right-2 top-2 transition-all duration-300
+                peer-focus:text-sm peer-focus:-top-4 peer-focus:text-blue-400
+                ${userData.password ? "-top-4 text-sm text-blue-400" : ""}`}
+              htmlFor="confirmedPassword"
+            >
+              تأكيد كلمة السر
+            </label>
+            {errors.confirmedPassword && (
+              <p className="text-red-500">{`*${errors.confirmedPassword}`}</p>
             )}
           </div>
 
+          {errors.general && (
+            <p className="text-red-500 col-span-2">{`*${errors.general}`}</p>
+          )}
           {/* Submit Button */}
           <button
             className="px-6 py-3 bg-blue-400 text-gray-900 font-bold hover:scale-105 duration-300"

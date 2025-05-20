@@ -1,13 +1,7 @@
-﻿public class ExceptionMiddleware
-{
-    private readonly RequestDelegate _next;
-    private readonly ILogger<ExceptionMiddleware> _logger;
+﻿using Educational.Exceptions;
 
-    public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger)
-    {
-        _next = next;
-        _logger = logger;
-    }
+public class ExceptionMiddleware(RequestDelegate _next, ILogger<ExceptionMiddleware> _logger)
+{
 
     public async Task Invoke(HttpContext context)
     {
@@ -24,9 +18,10 @@
 
             var statusCode = ex switch
             {
-                KeyNotFoundException => StatusCodes.Status404NotFound, // Not Found
+                EntityNotFoundException => StatusCodes.Status404NotFound, // Not Found
                 UnauthorizedAccessException => StatusCodes.Status401Unauthorized, // Unauthorized
-                ArgumentException or ArgumentNullException => StatusCodes.Status400BadRequest, // Bad Request
+                ArgumentException or ArgumentNullException or RegistrationException => StatusCodes.Status400BadRequest, // Bad Request
+                ConflictException => StatusCodes.Status409Conflict,
                 _ => StatusCodes.Status500InternalServerError // Internal Server Error (Default)
             };
 
@@ -36,7 +31,7 @@
             {
                 statusCode,
                 message = ex.Message,
-                detailedError = ex.InnerException?.Message // Include inner exception if available
+                detailedError = ex.InnerException?.Message 
             };
 
             await response.WriteAsJsonAsync(errorResponse);

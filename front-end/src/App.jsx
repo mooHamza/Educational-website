@@ -14,12 +14,10 @@ import EditUser from "./components/admin-dashboard/manageUsers/EditUser";
 import CreateUser from "./components/admin-dashboard/manageUsers/CreateUser";
 import EditCourse from "./components/admin-dashboard/manageCourses/EditCourse";
 import Homework from "./components/Homework";
-
 import SeeVideo from "./components/SeeVideo";
 import Add_Course from "./components/admin-dashboard/manageCourses/Add_Course";
 import ManageCourses from "./components/admin-dashboard/ManageCourses";
 import AddWeek from "./components/admin-dashboard/manageCourses/manageWeeks/AddWeek";
-import AddCourse from "./components/admin-dashboard/manageCourses/AddCourse";
 import DeleteCourse from "./components/admin-dashboard/manageCourses/DeleteCourse";
 import UpdateWeek from "./components/admin-dashboard/manageCourses/manageWeeks/UpdateWeek";
 import DeleteWeek from "./components/admin-dashboard/manageCourses/manageWeeks/DeleteWeek";
@@ -56,14 +54,13 @@ const App = () => {
           <Route path="users" element={<Users />} />
           <Route path="Edit-user" element={<EditUser />} />
           <Route path="createUser" element={<CreateUser />} />
-          <Route path="bookCourse" element={<BookCourse />} /> 
-          <Route path="getUserEvaluations" element={<GetUserEvaluation />} /> 
+          <Route path="bookCourse" element={<BookCourse />} />
+          <Route path="getUserEvaluations" element={<GetUserEvaluation />} />
 
           {/* manage courses */}
           <Route path="manageCourses" element={<ManageCourses />}>
             <Route index element={<Add_Course />} />
 
-            <Route path="addCourse" element={<AddCourse />} />
             <Route path="add_Course" element={<Add_Course />} />
             <Route path="editCourse" element={<EditCourse />} />
             <Route path="deleteCourse" element={<DeleteCourse />} />

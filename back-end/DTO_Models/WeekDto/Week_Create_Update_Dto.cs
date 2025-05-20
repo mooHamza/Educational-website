@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Educational.DTO_Models
 {
-    public class Week_CreateDto
+    public class Week_Create_Update_Dto
     {
         [Required]
         public  int WeekNumber { get; set; }
         [Required]
         public string Content { get; set; }
-        public ICollection<Lecture_Create_UpdateDto>? Lectures { get; set; }
+        public ICollection<Lecture_Create_Update_Dto>? Lectures { get; set; }
 
     }
 }

@@ -22,18 +22,19 @@ const Homework = () => {
     });
   };
 
-
   const GetHomeworkEvaluation = () => {
     axios
       .get(
-        `http://localhost:5020/api/Users/${user.Id}/homeworks/${homework.id}`
+        `http://localhost:5020/api/Users/${user.nameid}/homeworks/${homework.id}`
       )
       .then((res) => {
         setEvaluation(res.data.score);
         setUserSavedAnswers(res.data.user_Answers);
         console.log(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+      });
   };
   useEffect(() => {
     if (user) {
@@ -64,17 +65,16 @@ const Homework = () => {
       (x) => x.questionId == QuestionId
     );
 
-    if ( userAnswerONQ.optionID == OptionId &&isCorrect) {
-        return "bg-green-500";
-      }
-      else if (userAnswerONQ.optionID == OptionId && !isCorrect)
-         return "bg-red-300";
+    if (userAnswerONQ.optionID == OptionId && isCorrect) {
+      return "bg-green-500";
+    } else if (userAnswerONQ.optionID == OptionId && !isCorrect)
+      return "bg-red-300";
   };
   const handleSubmit = async () => {
     const result = calculateScore();
     try {
       const response = await axios.post(
-        `http://localhost:5020/api/Users/${user.Id}/homeworks/${homework.id}/score/${result}`,
+        `http://localhost:5020/api/Users/${user.nameid}/homeworks/${homework.id}/score/${result}`,
         userAnswers,
         {
           headers: {
@@ -131,23 +131,18 @@ const Homework = () => {
         <p className="text-center bg-black font-semibold text-white rounded-md p-3">
           your score is {evaluation} from {homework.degree}
         </p>
-      ) :
-       score || score == 0 
-       ?
-         (<div 
-         className="text-center bg-black font-semibold text-white rounded-md p-3"
-         >you score is {score} from {homework.degree} </div>)
-
-        :
-        (
-          <button
-            onClick={handleSubmit}
-            className="mt-4 p-2 bg-blue-500 text-white rounded-md"
-          >
-            Submit Homework
-          </button>
-        )
-      }
+      ) : score || score == 0 ? (
+        <div className="text-center bg-black font-semibold text-white rounded-md p-3">
+          you score is {score} from {homework.degree}{" "}
+        </div>
+      ) : (
+        <button
+          onClick={handleSubmit}
+          className="mt-4 p-2 bg-blue-500 text-white rounded-md"
+        >
+          Submit Homework
+        </button>
+      )}
     </div>
   );
 };

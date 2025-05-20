@@ -14,11 +14,6 @@ namespace Educational.Configuraions
                 .ValueGeneratedOnAdd();
 
 
-            builder.HasMany(u => u.Roles)
-                .WithMany(r => r.Users);
-                 
-
-
             builder.HasOne(u => u.Grade)
                  .WithMany(g => g.Users)
                  .HasForeignKey(u => u.GradeId)

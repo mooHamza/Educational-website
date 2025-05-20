@@ -2,13 +2,14 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Educational.DTO_Models.RoleDto;
 using Educational.Entities;
+using Microsoft.AspNetCore.Identity;
 
 
 namespace Educational.DTO_Models
 {
-    public class Get_User_Dto
+    public class User_Get_Dto
     {
-        public int Id { get; set; }
+        public required string Id { get; set; }
         public required string FirstName { get; set; }
 
         public required string SecondName { get; set; }
@@ -21,7 +22,7 @@ namespace Educational.DTO_Models
 
         public required string GradeName { get; set; }
 
-        public required List<Role_Get_Dto> Roles { get; set; } = new List<Role_Get_Dto>();
+        public required IList<string> Roles { get; set; } = [];
 
 
 

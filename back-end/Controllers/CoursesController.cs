@@ -5,6 +5,7 @@ using Educational.DTO_Models.CourseDto;
 using Educational.DTO_Models.LectureDto;
 using Educational.Entities;
 using Educational.services;
+using Educational.services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,48 +16,48 @@ namespace Educational.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    public class CoursesController( CourseServices _service,AppDbContext _context) : ControllerBase
+    public class CoursesController(ICourseService _service) : ControllerBase
     {
-   
-        [HttpPost("full")]
-        [Consumes("multipart/form-data")]
 
-        public async Task<IActionResult> CreateFullCourse([FromForm] FullCourse_Create_Dto coursedto)
-        {
-            await _service.SetCoursesAsync(coursedto);
-            return Created("api/courses", "course created successfully");
-        }
+
+        //[HttpPost("full")]
+        //[Consumes("multipart/form-data")]
+
+        //public async Task<IActionResult> CreateFullCourse([FromForm] FullCourse_Create_Dto coursedto)
+        //{
+        //    await _service.SetCoursesAsync(coursedto);
+        //    return Created("api/courses", "course created successfully");
+        //}
 
         [HttpPost]
 
-        public async Task<IActionResult> CreateCourse(CourseCreate_Dto Course)
+        public async Task<IActionResult> CreateCourse(Course_Create_Update_Dto Course)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            
-               await _service.CreateCourseAsync(Course);
-                return Created("api/courses","course created successfully");
-            
+
+            await _service.CreateCourseAsync(Course);
+            return Created("api/courses", "course created successfully");
 
         }
         [HttpGet]
-        public async Task<ActionResult<List<CourseGetDto>>> GetCourse() 
+        public async Task<ActionResult<List<CourseGetDto>>> GetCourse()
         {
-            var courses = await _service.GetCourses();
+            var courses = await _service.GetAllCoursesAsync();
             return Ok(courses);
         }
         [HttpGet("{Id}")]
 
-        public async Task<IActionResult>GetCoursee(int Id)
+        public async Task<IActionResult> GetCourse(int Id)
         {
-            var course = await _context.Courses.FindAsync(Id);
+            var course = await _service.GetCourseByIdAsync(Id);
             return Ok(new { Course = course });
         }
         [HttpPut("{Id}")]
 
-        public async Task<ActionResult> UpdateCourse(Course_Update_Dto UpdatedCourse,int Id)
+        public async Task<ActionResult> UpdateCourse(Course_Create_Update_Dto UpdatedCourse, int Id)
         {
             await _service.UpdateCourseAsync(UpdatedCourse, Id);
             return NoContent();
@@ -64,7 +65,7 @@ namespace Educational.Controllers
 
         [HttpDelete("{Id}")]
 
-        public async Task<ActionResult> DeleteCourse(int Id)
+        public async Task<ActionResult> DeleteCourseAsync(int Id)
         {
             await _service.DeleteCourseAsync(Id);
             return NoContent();
@@ -77,23 +78,21 @@ namespace Educational.Controllers
         /// <returns></returns>
 
         [HttpPost("{CourseId}/weeks")]
- 
-        public async Task<IActionResult> AddWeek(Week_CreateDto week,int CourseId)
+
+        public async Task<IActionResult> AddWeek(Week_Create_Update_Dto week, int CourseId)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            else
-            {
-                await _service.AddWeekAsync(week,CourseId);
-                return Created("api/weeks", "week created successfully");
-            }
+
+            await _service.AddWeekAsync(week, CourseId);
+            return Created("api/weeks", "week created successfully");
         }
 
         [HttpPut("{CourseId}/weeks/{Id}")]
 
-        public async Task<IActionResult> UpdateWeek(Week_Update_Dto Week,int CourseId, int Id)
+        public async Task<IActionResult> UpdateWeek(Week_Create_Update_Dto Week, int CourseId, int Id)
         {
             if (!ModelState.IsValid)
             {
@@ -113,17 +112,18 @@ namespace Educational.Controllers
             await _service.DeleteWeekAsync(Id);
             return NoContent();
         }
+        
 
 
-        /// <summary>
-        /// start Lectures part
-        /// </summary>
-        /// <param ></param>
-        /// <returns></returns>
+        ///// <summary>
+        ///// start Lectures part
+        ///// </summary>
+        ///// <param ></param>
+        ///// <returns></returns>
 
         [HttpPost("{CourseId}/weeks/{WeekId}/lectures")]
-       
-        public async Task<IActionResult> AddLecture(Lecture_Create_UpdateDto lecture,int CourseId,int WeekId)
+
+        public async Task<IActionResult> AddLecture(Lecture_Create_Update_Dto lecture, int CourseId, int WeekId)
         {
             if (!ModelState.IsValid)
             {
@@ -138,8 +138,8 @@ namespace Educational.Controllers
         }
         [HttpPut("{CourseId}/weeks/{WeekId}/lectures/{LectureId}")]
         [Consumes("multipart/form-data")]
-    
-        public async Task<IActionResult> UpdateLecture(Lecture_Create_UpdateDto lecture,int CourseId, int WeekId,int LectureId)
+
+        public async Task<IActionResult> UpdateLecture(Lecture_Create_Update_Dto lecture, int CourseId, int WeekId, int LectureId)
         {
             if (lecture == null)
             {
@@ -157,43 +157,43 @@ namespace Educational.Controllers
             await _service.DeleteLectureAsync(LectureId);
             return NoContent();
         }
-        /// <summary>
-        /// start Homeworks part
-        /// </summary>
-        /// <param ></param>
-        /// <returns></returns>
+        ///// <summary>
+        ///// start Homeworks part
+        ///// </summary>
+        ///// <param ></param>
+        ///// <returns></returns>
 
         [HttpPost("{CourseId}/weeks/{WeekId}/lectures/{LectureId}/homeworks")]
 
-        public async Task<IActionResult> AddHomework(Hw_Create_Dto homework,int LectureId)
+        public async Task<IActionResult> AddHomework(Homework_Create_Update_Dto homework, int LectureId)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            await _service.AddHomeWork(homework, LectureId);
+            await _service.AddHomeWorkAsync(homework, LectureId);
             return Created("lectures", "lecture created successfully");
         }
 
         [HttpPut("{CourseId}/weeks/{WeekId}/lectures/{LectureId}/homeworks/{HomeworkId}")]
 
-        public async Task<IActionResult> UpdateHomework(Hw_Create_Dto homework,int HomeworkId)
+        public async Task<IActionResult> UpdateHomework(Homework_Create_Update_Dto homework, int HomeworkId)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            await _service.UpdateHomeWork(homework, HomeworkId);
+            await _service.UpdateHomeWorkAsync(homework, HomeworkId);
             return NoContent();
         }
 
         [HttpDelete("{CourseId}/weeks/{WeekId}/lectures/{LectureId}/homeworks/{homewokId}")]
-       
+
         public async Task<IActionResult> RemoveHomework(int homewokId)
         {
-            await _service.DeleteHomework(homewokId);
+            await _service.DeleteHomeworkAsync(homewokId);
             return NoContent();
         }
 
-    }
-}
+    } }
+

@@ -1,93 +1,174 @@
-﻿using Educational.DTO_Models;
+﻿using Educational.Data;
+using Educational.DTO_Models;
 using Educational.DTO_Models.CourseDto;
 using Educational.DTO_Models.LectureDto;
+using Educational.DTO_Models.OptionDto;
 using Educational.Entities;
+using Educational.Mapper;
+using Microsoft.EntityFrameworkCore;
+
 using Educational.Repositories;
 using Educational.Repositories.Interfaces;
+using Educational.services.Interfaces;
+using Educational.Exceptions;
 
 namespace Educational.services
 {
-    public class CourseServices(IcourseRepository _repository) 
+    public class CourseServices(
+        AppDbContext _context,
+        ICourseRepository _courseRepository,
+        IBaseRepository<Week> _WeekRepository,
+        IBaseRepository<Lecture> _LectureRepository,
+        IBaseRepository<Homework> _HomeworkRepository,
+        CourseMapper _CourseMapper,
+        LectureMapper _LectureMapper,
+         HomeworkMapper _HomeworkMapper
+
+        ) : ICourseService
     {
-        public async Task SetCoursesAsync(FullCourse_Create_Dto coursedto)
+
+        public async Task CreateCourseAsync(Course_Create_Update_Dto courseCreate)
         {
-            await _repository.SetCoursesAsync(coursedto);
+            var course = _CourseMapper.ToEntity(courseCreate);
+             await _courseRepository.AddAsync(course);
+            await _context.SaveChangesAsync();
         }
 
-        public async Task CreateCourseAsync(CourseCreate_Dto course)
+        public async Task<CourseGetDto> GetCourseByIdAsync(int Id)
         {
-             await _repository.CreateCourse(course);
+            var course = await _courseRepository.GetCourseByIdAsync(Id)
+                        ?? throw new EntityNotFoundException(nameof(Course),Id);
+
+            var courseReadDto = _CourseMapper.ToReadDto(course);
+            return courseReadDto;
         }
 
-        public async Task<List<CourseGetDto>> GetCourses()
+        public async Task<IEnumerable<CourseGetDto>> GetAllCoursesAsync()
         {
-            return await _repository.GetCoursesAsync();
+            var courses = await _courseRepository.GetAllCoursesAsync();
+           var CoursesDto =  _CourseMapper.ToListReadDto(courses);
+            return CoursesDto;
         }
-
-        public async Task UpdateCourseAsync(Course_Update_Dto UpdatedCourse,int Id) 
+        public async Task UpdateCourseAsync(Course_Create_Update_Dto UpdatedCoursedto, int Id) 
         {
-            await _repository.EditCourseAsync(UpdatedCourse, Id);
+            var course = await _courseRepository.GetByIdAsync(Id)
+                        ?? throw new EntityNotFoundException(nameof(Course), Id);
+
+            var updatedCourse = _CourseMapper.ToUpdatedEntity(course, UpdatedCoursedto);
+            _courseRepository.Update(updatedCourse);
+            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteCourseAsync(int Id)
         {
-            await _repository.DeleteCourseAsync(Id);
+            var course = await _courseRepository.GetByIdAsync(Id)
+                        ?? throw new EntityNotFoundException(nameof(Course), Id);
+
+            _courseRepository.Delete(course);
+            await _context.SaveChangesAsync();
         }
-        /// <summary>
-        /// Week Section
-        /// </summary>
-        /// <param ></param>
-        /// <returns></returns>
-        public async Task AddWeekAsync(Week_CreateDto week,int CourseId)
+         
+        /// //////////////////
+        /// 
+        /// Week Section  ///
+        /// ////////////////
+        public async Task AddWeekAsync(Week_Create_Update_Dto weekCreatedto, int CourseId)
         {
-           await _repository.AddWeek(week, CourseId);
+             _ = await _courseRepository.GetByIdAsync(CourseId)
+                        ?? throw new EntityNotFoundException(nameof(Course), CourseId);
+
+            var newWeek = weekCreatedto.ToEntity(CourseId);
+            await _WeekRepository.AddAsync(newWeek);
+            await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateWeekAsync(Week_Update_Dto Week,int CourseId, int Id)
+        public async Task UpdateWeekAsync(Week_Create_Update_Dto WeekUpdatedto, int CourseId, int Id)
         {
-            await _repository.UpdateWeek(Week, CourseId, Id);
+            var week = await _WeekRepository.GetByIdAsync(Id)
+                        ?? throw new EntityNotFoundException(nameof(Week), Id);
+
+            week.ToUpdatedEntity(WeekUpdatedto,CourseId);
+            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteWeekAsync(int Id)
-        {
-            await _repository.DeleteWeek(Id);
+        { 
+            var week = await _WeekRepository.GetByIdAsync(Id)
+                 ?? throw new EntityNotFoundException(nameof(Week), Id);
+       
+             _WeekRepository.Delete(week);
+            await _context.SaveChangesAsync();
         }
-        /// <summary>
-        /// Lecture Section
-        /// </summary>
-        /// <param ></param>
-        /// <returns></returns>
-        public async Task AddLectureAsync(Lecture_Create_UpdateDto lecture,int WeekId)
+
+        ////// //////////////////
+        ///                   //
+        /// Lecture Section  ///
+        /// ////////////////////
+        public async Task AddLectureAsync(Lecture_Create_Update_Dto lecture, int WeekId)
+
         {
-            await _repository.AddLecture(lecture, WeekId);
+            var newLecture = _LectureMapper.ToEntity(lecture, WeekId);
+            await _LectureRepository.AddAsync(newLecture);
+            await _context.SaveChangesAsync();
         }
-        public async Task UpdateLectureAsync(Lecture_Create_UpdateDto lecture, int WeekId,int Id)
+       
+        public async Task UpdateLectureAsync(Lecture_Create_Update_Dto updatedLecture, int WeekId, int Id)
         {
-            await _repository.UpdateLecture(lecture, WeekId, Id);
+            var lecture = await _LectureRepository.GetByIdAsync(Id)
+                        ?? throw new EntityNotFoundException(nameof(Lecture), Id);
+
+            var updated_Lecture = _LectureMapper.ToUpdatedEntity(lecture,updatedLecture, WeekId);
+            _LectureRepository.Update(updated_Lecture);
+            await _context.SaveChangesAsync();
+
         }
+       
         public async Task DeleteLectureAsync(int Id)
         {
-            await _repository.DeleteLecture(Id);
-        }
-        /// <summary>
-        /// homework Section
-        /// </summary>
-        /// <param ></param>
-        /// <returns></returns>
-        public async Task AddHomeWork(Hw_Create_Dto homeWork, int LectureId)
-        {
-            await _repository.AddHomeWork(homeWork, LectureId); 
+            var lecture = await _LectureRepository.GetByIdAsync(Id)
+                    ?? throw new EntityNotFoundException(nameof(Lecture), Id);
+
+
+            _LectureRepository.Delete(lecture);
+            await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateHomeWork(Hw_Create_Dto HomeWork,int HomeworkId)
+        /// ////// //////////////////
+        ///                   //
+        /// homework Section  ///
+        /// ////////////////////
+
+        public async Task AddHomeWorkAsync(Homework_Create_Update_Dto homeWork, int LectureId)
         {
-            await _repository.UpdateHomeWork(HomeWork, HomeworkId);
+            _ = await _LectureRepository.GetByIdAsync(LectureId)
+                  ?? throw new EntityNotFoundException(nameof(Lecture), LectureId);
+
+            var newHomework = _HomeworkMapper.ToEntity(homeWork, LectureId);
+            await _HomeworkRepository.AddAsync(newHomework);
+            await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteHomework(int Id)
+  
+        public async Task UpdateHomeWorkAsync(Homework_Create_Update_Dto updatedHomeWork, int HomeworkId)
         {
-            await _repository.DeleteHomework(Id);
+            var homework = await _HomeworkRepository.GetByIdAsync(HomeworkId)
+                ?? throw new EntityNotFoundException(nameof(Homework),HomeworkId);
+
+            var updated_homework = _HomeworkMapper.ToUpdatedEntity(homework, updatedHomeWork);
+            _HomeworkRepository.Update(updated_homework);
+            await _context.SaveChangesAsync();
+
         }
+
+        public async Task DeleteHomeworkAsync(int Id)
+        {
+            var homework = await _HomeworkRepository.GetByIdAsync(Id)
+                ?? throw new EntityNotFoundException(nameof(Homework), Id);
+
+            _HomeworkRepository.Delete(homework);
+            await _context.SaveChangesAsync();
+        }
+
 
 
     }

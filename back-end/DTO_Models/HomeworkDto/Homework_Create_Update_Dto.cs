@@ -1,7 +1,7 @@
 ﻿
 namespace Educational.Entities
 {
-    public class Hw_Create_Dto
+    public class Homework_Create_Update_Dto
     {
         public required string Name { get; set; }
 

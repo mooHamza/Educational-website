@@ -9,6 +9,6 @@ namespace Educational.DTO_Models.CourseDto
         public required string Description { get; set; }
         public required int Price { get; set; }
         public required int GradeId { get; set; }
-        public ICollection<Week_CreateDto>? Weeks { get; set; }
+        public ICollection<Week_Create_Update_Dto>? Weeks { get; set; }
     }
 }

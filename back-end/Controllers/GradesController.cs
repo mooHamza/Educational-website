@@ -3,15 +3,22 @@ using Educational.Entities;
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Educational.Repositories.Interfaces;
+using Educational.services.Interfaces;
 
 namespace Educational.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GradesController(GradeServices _service) : ControllerBase
+    public class GradesController : ControllerBase
     {
+        private readonly IGradeServices _service;
+        public GradesController(IGradeServices service)
+        {
+            _service = service;
+        }
         [HttpPost]
-        public async Task<ActionResult> CreateGrade(Grade_Create_Dto Grade_Create_Dto)
+        public async Task<ActionResult> CreateGrade(Grade_Create_Update_Dto Grade_Create_Dto)
         {
             await _service.CreateGradeAsync(Grade_Create_Dto);
             return Created("api/Grades", "Grade created successfully");
@@ -20,7 +27,7 @@ namespace Educational.Controllers
         [HttpGet("{Id}")]
         public async Task<ActionResult<Grade_Get_Dto>> GetGrade(int Id)
         {
-          var Grade =  await _service.GetGradeAsync(Id);
+            var Grade = await _service.GetGradeByIdAsync(Id);
             return Ok(Grade);
         }
 
@@ -39,7 +46,7 @@ namespace Educational.Controllers
         }
 
         [HttpPut("{Id}")]
-        public async Task<ActionResult> EditGrade(Grade_Update_Dto Grade_Update_Dto, int Id)
+        public async Task<ActionResult> EditGrade(Grade_Create_Update_Dto Grade_Update_Dto, int Id)
         {
             await _service.EditGradeAsync(Grade_Update_Dto, Id);
             return NoContent();

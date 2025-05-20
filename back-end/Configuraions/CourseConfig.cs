@@ -12,8 +12,16 @@ namespace Educational.Configuraions
 
             builder.Property(c => c.Id)
                 .ValueGeneratedOnAdd();
+
             builder.HasMany(c => c.Users)
-                .WithMany(u => u.Courses);
+                .WithMany(u => u.Courses)
+                .UsingEntity<Dictionary<string, object>>(
+                "Users_courses",
+                j => j.HasOne<User>().WithMany().OnDelete(DeleteBehavior.Restrict),
+                j => j.HasOne<Course>().WithMany().OnDelete(DeleteBehavior.Cascade)
+                );
+
+
 
         }
     }

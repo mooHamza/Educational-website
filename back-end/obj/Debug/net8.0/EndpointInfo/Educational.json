@@ -5,72 +5,6 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Courses/full": {
-      "post": {
-        "tags": [
-          "Courses"
-        ],
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "required": [
-                  "Description",
-                  "GradeId",
-                  "Name",
-                  "Price"
-                ],
-                "type": "object",
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "Description": {
-                    "type": "string"
-                  },
-                  "Price": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "GradeId": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "Weeks": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Week_CreateDto"
-                    }
-                  }
-                }
-              },
-              "encoding": {
-                "Name": {
-                  "style": "form"
-                },
-                "Description": {
-                  "style": "form"
-                },
-                "Price": {
-                  "style": "form"
-                },
-                "GradeId": {
-                  "style": "form"
-                },
-                "Weeks": {
-                  "style": "form"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/Courses": {
       "post": {
         "tags": [
@@ -80,17 +14,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseCreate_Dto"
+                "$ref": "#/components/schemas/Course_Create_Update_Dto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseCreate_Dto"
+                "$ref": "#/components/schemas/Course_Create_Update_Dto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseCreate_Dto"
+                "$ref": "#/components/schemas/Course_Create_Update_Dto"
               }
             }
           }
@@ -179,17 +113,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Course_Update_Dto"
+                "$ref": "#/components/schemas/Course_Create_Update_Dto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Course_Update_Dto"
+                "$ref": "#/components/schemas/Course_Create_Update_Dto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Course_Update_Dto"
+                "$ref": "#/components/schemas/Course_Create_Update_Dto"
               }
             }
           }
@@ -242,17 +176,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Week_CreateDto"
+                "$ref": "#/components/schemas/Week_Create_Update_Dto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Week_CreateDto"
+                "$ref": "#/components/schemas/Week_Create_Update_Dto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Week_CreateDto"
+                "$ref": "#/components/schemas/Week_Create_Update_Dto"
               }
             }
           }
@@ -293,17 +227,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Week_Update_Dto"
+                "$ref": "#/components/schemas/Week_Create_Update_Dto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Week_Update_Dto"
+                "$ref": "#/components/schemas/Week_Create_Update_Dto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Week_Update_Dto"
+                "$ref": "#/components/schemas/Week_Create_Update_Dto"
               }
             }
           }
@@ -354,6 +288,7 @@
           {
             "name": "Name",
             "in": "query",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -364,7 +299,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/Hw_Create_Dto"
+                "$ref": "#/components/schemas/Homework_Create_Update_Dto"
               }
             }
           },
@@ -391,6 +326,9 @@
           "content": {
             "multipart/form-data": {
               "schema": {
+                "required": [
+                  "File"
+                ],
                 "type": "object",
                 "properties": {
                   "File": {
@@ -423,6 +361,7 @@
           {
             "name": "Name",
             "in": "query",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -433,7 +372,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/Hw_Create_Dto"
+                "$ref": "#/components/schemas/Homework_Create_Update_Dto"
               }
             }
           },
@@ -469,6 +408,9 @@
           "content": {
             "multipart/form-data": {
               "schema": {
+                "required": [
+                  "File"
+                ],
                 "type": "object",
                 "properties": {
                   "File": {
@@ -567,17 +509,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Hw_Create_Dto"
+                "$ref": "#/components/schemas/Homework_Create_Update_Dto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Hw_Create_Dto"
+                "$ref": "#/components/schemas/Homework_Create_Update_Dto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Hw_Create_Dto"
+                "$ref": "#/components/schemas/Homework_Create_Update_Dto"
               }
             }
           }
@@ -633,17 +575,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Hw_Create_Dto"
+                "$ref": "#/components/schemas/Homework_Create_Update_Dto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Hw_Create_Dto"
+                "$ref": "#/components/schemas/Homework_Create_Update_Dto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Hw_Create_Dto"
+                "$ref": "#/components/schemas/Homework_Create_Update_Dto"
               }
             }
           }
@@ -711,17 +653,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Grade_Create_Dto"
+                "$ref": "#/components/schemas/Grade_Create_Update_Dto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Grade_Create_Dto"
+                "$ref": "#/components/schemas/Grade_Create_Update_Dto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Grade_Create_Dto"
+                "$ref": "#/components/schemas/Grade_Create_Update_Dto"
               }
             }
           }
@@ -848,17 +790,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Grade_Update_Dto"
+                "$ref": "#/components/schemas/Grade_Create_Update_Dto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Grade_Update_Dto"
+                "$ref": "#/components/schemas/Grade_Create_Update_Dto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Grade_Update_Dto"
+                "$ref": "#/components/schemas/Grade_Create_Update_Dto"
               }
             }
           }
@@ -871,35 +813,6 @@
       }
     },
     "/api/Role": {
-      "post": {
-        "tags": [
-          "Role"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role_Create_Update_Dto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role_Create_Update_Dto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role_Create_Update_Dto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "get": {
         "tags": [
           "Role"
@@ -937,69 +850,6 @@
         }
       }
     },
-    "/api/Role/{Id}": {
-      "put": {
-        "tags": [
-          "Role"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role_Create_Update_Dto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role_Create_Update_Dto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role_Create_Update_Dto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Role"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/Users/register": {
       "post": {
         "tags": [
@@ -1009,17 +859,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Userdto"
+                "$ref": "#/components/schemas/Registerdto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Userdto"
+                "$ref": "#/components/schemas/Registerdto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Userdto"
+                "$ref": "#/components/schemas/Registerdto"
               }
             }
           }
@@ -1085,8 +935,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -1096,17 +945,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Get_User_Dto"
+                  "$ref": "#/components/schemas/User_Get_Dto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Get_User_Dto"
+                  "$ref": "#/components/schemas/User_Get_Dto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Get_User_Dto"
+                  "$ref": "#/components/schemas/User_Get_Dto"
                 }
               }
             }
@@ -1123,8 +972,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -1144,8 +992,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -1186,8 +1033,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
@@ -1218,8 +1064,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -1241,8 +1086,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
@@ -1310,8 +1154,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
@@ -1342,8 +1185,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -1357,34 +1199,6 @@
   },
   "components": {
     "schemas": {
-      "CourseCreate_Dto": {
-        "required": [
-          "description",
-          "gradeId",
-          "name",
-          "price"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "description": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "price": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "gradeId": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
       "CourseGetDto": {
         "required": [
           "description",
@@ -1424,7 +1238,7 @@
         },
         "additionalProperties": false
       },
-      "Course_Update_Dto": {
+      "Course_Create_Update_Dto": {
         "required": [
           "description",
           "gradeId",
@@ -1434,12 +1248,12 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "price": {
             "type": "integer",
@@ -1452,57 +1266,7 @@
         },
         "additionalProperties": false
       },
-      "Get_User_Dto": {
-        "required": [
-          "city",
-          "email",
-          "firstName",
-          "gradeName",
-          "phone",
-          "roles",
-          "secondName"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "firstName": {
-            "type": "string",
-            "nullable": true
-          },
-          "secondName": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "city": {
-            "type": "string",
-            "nullable": true
-          },
-          "phone": {
-            "type": "string",
-            "nullable": true
-          },
-          "gradeName": {
-            "type": "string",
-            "nullable": true
-          },
-          "roles": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Role_Get_Dto"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Grade_Create_Dto": {
+      "Grade_Create_Update_Dto": {
         "type": "object",
         "properties": {
           "gradeName": {
@@ -1526,11 +1290,27 @@
         },
         "additionalProperties": false
       },
-      "Grade_Update_Dto": {
+      "Homework_Create_Update_Dto": {
+        "required": [
+          "degree",
+          "name",
+          "questions"
+        ],
         "type": "object",
         "properties": {
-          "gradeName": {
+          "name": {
             "type": "string",
+            "nullable": true
+          },
+          "degree": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Question_Create_Dto"
+            },
             "nullable": true
           }
         },
@@ -1565,33 +1345,11 @@
         },
         "additionalProperties": false
       },
-      "Hw_Create_Dto": {
+      "Lecture_Create_Update_Dto": {
         "required": [
-          "degree",
-          "name",
-          "questions"
+          "file",
+          "name"
         ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "degree": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "questions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Question_Create_Dto"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Lecture_Create_UpdateDto": {
         "type": "object",
         "properties": {
           "name": {
@@ -1606,7 +1364,7 @@
           "homeworks": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Hw_Create_Dto"
+              "$ref": "#/components/schemas/Homework_Create_Update_Dto"
             },
             "nullable": true
           }
@@ -1742,22 +1500,69 @@
         },
         "additionalProperties": false
       },
-      "Role_Create_Update_Dto": {
+      "Registerdto": {
+        "required": [
+          "city",
+          "confirmedPassword",
+          "email",
+          "firstName",
+          "gradeId",
+          "password",
+          "phoneNumber",
+          "secondName"
+        ],
         "type": "object",
         "properties": {
-          "roleName": {
+          "firstName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "secondName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
             "type": "string",
-            "nullable": true
+            "format": "email"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string",
+            "format": "password"
+          },
+          "confirmedPassword": {
+            "minLength": 1,
+            "type": "string",
+            "format": "password"
+          },
+          "city": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "phoneNumber": {
+            "minLength": 1,
+            "pattern": "^(010|011|012|015)\\d{8}$",
+            "type": "string",
+            "format": "tel"
+          },
+          "gradeId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
       },
       "Role_Get_Dto": {
+        "required": [
+          "id",
+          "roleName"
+        ],
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "nullable": true
           },
           "roleName": {
             "type": "string",
@@ -1770,10 +1575,6 @@
         "type": "object",
         "properties": {
           "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "password": {
             "type": "string",
             "nullable": true
           },
@@ -1793,10 +1594,15 @@
             "type": "string",
             "nullable": true
           },
+          "gradeId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
           "roles": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Role_Create_Update_Dto"
+              "type": "string"
             },
             "nullable": true
           }
@@ -1817,18 +1623,23 @@
         },
         "additionalProperties": false
       },
-      "Userdto": {
+      "User_Get_Dto": {
         "required": [
           "city",
           "email",
           "firstName",
-          "grade",
+          "gradeName",
+          "id",
           "phone",
-          "secondName",
-          "userPassword"
+          "roles",
+          "secondName"
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
           "firstName": {
             "type": "string",
             "nullable": true
@@ -1841,10 +1652,6 @@
             "type": "string",
             "nullable": true
           },
-          "userPassword": {
-            "type": "string",
-            "nullable": true
-          },
           "city": {
             "type": "string",
             "nullable": true
@@ -1853,14 +1660,21 @@
             "type": "string",
             "nullable": true
           },
-          "grade": {
-            "type": "integer",
-            "format": "int32"
+          "gradeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Week_CreateDto": {
+      "Week_Create_Update_Dto": {
         "required": [
           "content",
           "weekNumber"
@@ -1878,7 +1692,7 @@
           "lectures": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Lecture_Create_UpdateDto"
+              "$ref": "#/components/schemas/Lecture_Create_Update_Dto"
             },
             "nullable": true
           }
@@ -1910,24 +1724,6 @@
               "$ref": "#/components/schemas/Lecture_Get_Dto"
             },
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Week_Update_Dto": {
-        "required": [
-          "content",
-          "weekNumber"
-        ],
-        "type": "object",
-        "properties": {
-          "weekNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "content": {
-            "minLength": 1,
-            "type": "string"
           }
         },
         "additionalProperties": false

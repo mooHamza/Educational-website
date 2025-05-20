@@ -18,20 +18,7 @@ const Users = () => {
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
-  // const changeRole = (userId, newRole) => {
-  //   axios
-  //     .put(
-  //       `http://localhost:8000/users/${userId}`,
-  //       { role: newRole },
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //         },
-  //       }
-  //     )
-  //     .then((res) => console.log(res))
-  //     .catch((err) => console.log(err));
-  // };
+
   return (
     <div className="p-6 bg-gray-800 text-gray-200 h-full " dir="ltr">
       <h1 className="text-2xl font-bold mb-4">User Management</h1>
@@ -56,11 +43,11 @@ const Users = () => {
                 <td className="py-2 px-4">{`${user.firstName} ${user.secondName}`}</td>
                 <td className="py-2 px-4">{user.email}</td>
                 <td className="py-2 px-4">{user.phone}</td>
-                <td className="py-2 px-4">{user.grade}</td>
+                <td className="py-2 px-4">{user.gradeName}</td>
                 <td className="py-2 px-4">{user.city}</td>
 
                 <td className="py-2 pt-5 px-4 flex items-center">
-                  <p>{user.roles.map((role) => role.roleName).join(", ")}</p>
+                  <p>{user.roles.map((role) => role).join(", ")}</p>
                 </td>
                 <td className="py-2 px-4">
                   <button className=" text-green-500 hover:underline">

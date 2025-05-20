@@ -9,14 +9,6 @@ const ManageCourses = () => {
         {/* Navigation Tabs */}
         <nav className="grid grid-cols-2 sm:grid-cols-4 text-center gap-2 mb-6 border-b border-gray-600 pb-3">
           <NavLink
-            to="addCourse"
-            className={({ isActive }) =>
-              `px-4 py-2 rounded-lg ${isActive ? "bg-blue-600" : "bg-gray-700"}`
-            }
-          >
-            Add full Course
-          </NavLink>
-          <NavLink
             to="add_Course"
             className={({ isActive }) =>
               `px-4 py-2 rounded-lg ${isActive ? "bg-blue-600" : "bg-gray-700"}`
@@ -40,8 +32,8 @@ const ManageCourses = () => {
           >
             Delete Course
           </NavLink>
-          </nav>
-          <nav className="grid grid-cols-2 sm:grid-cols-4 text-center gap-2 mb-6 border-b border-gray-600 pb-3">
+        </nav>
+        <nav className="grid grid-cols-2 sm:grid-cols-4 text-center gap-2 mb-6 border-b border-gray-600 pb-3">
           <NavLink
             to="addWeek"
             className={({ isActive }) =>
@@ -66,8 +58,8 @@ const ManageCourses = () => {
           >
             delete week
           </NavLink>
-          </nav>
-          <nav className="grid grid-cols-2 sm:grid-cols-4 text-center gap-2 mb-6 border-b border-gray-600 pb-3">
+        </nav>
+        <nav className="grid grid-cols-2 sm:grid-cols-4 text-center gap-2 mb-6 border-b border-gray-600 pb-3">
           <NavLink
             to="addLecture"
             className={({ isActive }) =>
@@ -90,17 +82,17 @@ const ManageCourses = () => {
               `px-4 py-2 rounded-lg ${isActive ? "bg-blue-600" : "bg-gray-700"}`
             }
           >
-            delete Lecture 
+            delete Lecture
           </NavLink>
-          </nav>
-          <nav className="grid grid-cols-2 sm:grid-cols-4 text-center gap-2 mb-6 border-b border-gray-600 pb-3">
+        </nav>
+        <nav className="grid grid-cols-2 sm:grid-cols-4 text-center gap-2 mb-6 border-b border-gray-600 pb-3">
           <NavLink
             to="addHomework"
             className={({ isActive }) =>
               `px-4 py-2 rounded-lg ${isActive ? "bg-blue-600" : "bg-gray-700"}`
             }
           >
-            add Homework 
+            add Homework
           </NavLink>
           <NavLink
             to="deleteHomework"
@@ -108,7 +100,7 @@ const ManageCourses = () => {
               `px-4 py-2 rounded-lg ${isActive ? "bg-blue-600" : "bg-gray-700"}`
             }
           >
-            delete Homework 
+            delete Homework
           </NavLink>
           <NavLink
             to="updateHomework"
@@ -116,7 +108,7 @@ const ManageCourses = () => {
               `px-4 py-2 rounded-lg ${isActive ? "bg-blue-600" : "bg-gray-700"}`
             }
           >
-            update Homework 
+            update Homework
           </NavLink>
         </nav>
 
